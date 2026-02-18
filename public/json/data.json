@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Login page not working",
+    "description": "Users cannot log in using their credentials.",
+    "customer": "John Carter",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-02-01T10:15:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Payment failed",
+    "description": "Transaction declines even with valid cards.",
+    "customer": "Sarah Lee",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-02-02T08:20:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Event not loading",
+    "description": "Event page shows blank screen.",
+    "customer": "Michael Brown",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-02-03T12:45:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Ticket download issue",
+    "description": "PDF ticket does not download after purchase.",
+    "customer": "Emma Wilson",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-02-04T09:10:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Slow website speed",
+    "description": "Pages load very slowly during peak hours.",
+    "customer": "Daniel Smith",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "2026-02-05T14:05:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Profile update error",
+    "description": "Users cannot update profile information.",
+    "customer": "Olivia Taylor",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-02-06T11:30:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Wrong ticket price",
+    "description": "Displayed price differs from checkout price.",
+    "customer": "Liam Anderson",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-02-07T16:25:00Z"
+  },
+  {
+    "id": 8,
+    "title": "Notification emails not sent",
+    "description": "Customers do not receive booking confirmation emails.",
+    "customer": "Sophia Martinez",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-02-08T07:55:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Search not returning results",
+    "description": "Search bar fails to show matching events.",
+    "customer": "Noah Thomas",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-02-09T13:40:00Z"
+  },
+  {
+    "id": 10,
+    "title": "Mobile layout broken",
+    "description": "Layout overlaps on small screens.",
+    "customer": "Ava Harris",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-02-10T18:15:00Z"
+  },
+  {
+    "id": 11,
+    "title": "Coupon code invalid",
+    "description": "Valid promo codes are rejected.",
+    "customer": "William Clark",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "2026-02-11T10:05:00Z"
+  },
+  {
+    "id": 12,
+    "title": "Account verification delay",
+    "description": "Verification emails arrive very late.",
+    "customer": "Isabella Lewis",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-02-12T15:50:00Z"
+  }
+]
