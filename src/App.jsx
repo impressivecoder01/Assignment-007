@@ -1,6 +1,7 @@
 
 import './App.css'
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
   
@@ -10,9 +11,12 @@ function App() {
       <header>
         <Header></Header>
       </header>
-      <body>
-        
-      </body>
+      <main className='bg-gray-100 w-11/12 mx-auto py-10'>
+        <section className='hero-section px-1'>
+          <Hero></Hero>
+
+        </section>
+      </main>
     </>
   )
 }
