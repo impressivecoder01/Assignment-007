@@ -8,7 +8,7 @@ import AllCards from './components/cards/AllCards'
 
 function App() {
   const loadData = () => fetch('/json/data.json').then(res => res.json())
-  
+  const loadDataPromise = loadData()
   return (
     <>
       <header>
@@ -20,7 +20,7 @@ function App() {
         </section>
         <section>
           <Suspense fallback={"Loading..."}>
-            <AllCards promise ={loadData}>
+            <AllCards promise ={loadDataPromise}>
 
             </AllCards>
           </Suspense>

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
+import CustomerCard from './CustomerCard';
 
 const AllCards = ({promise}) => {
-    console.log(promise)
+    const data = use(promise)
+    console.log(data)
     return (
         <>
         <div className='grid grid-cols-12 py-5'>
@@ -9,6 +11,12 @@ const AllCards = ({promise}) => {
         
         <div className='col-span-10'>
             <h1>Customer Tickets</h1>
+            <div className=''>
+{
+                data.map(item => <CustomerCard item={item}></CustomerCard>)
+            }
+            </div>
+            
         </div>
         <div>
             <h1>Task Status</h1>
