@@ -16,7 +16,7 @@ function App() {
       </header>
       <main className='bg-gray-100 w-11/12 mx-auto py-10'>
         <section className='hero-section px-1'>
-          <Hero></Hero>
+          {/* <Hero></Hero> */}
         </section>
         <section>
           <Suspense fallback={"Loading..."}>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CustomerCard = ({item}) => {
-    console.log(item)
+const CustomerCard = ({item,handleTaskStatus}) => {
+    // console.log(item)
     return (
-        <div className='shadow-2xl border rounded-2xl p-6'>
+        <div onClick={() => handleTaskStatus(item)} className='shadow-2xl cursor-pointer border rounded-2xl my-2 p-6'>
             <h1 className='font-bold text-2xl'>{item.title}</h1>
             <p>{item.description}</p>
             <div className='flex justify-between'>
