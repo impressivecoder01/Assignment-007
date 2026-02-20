@@ -1,7 +1,7 @@
 import React from 'react';
 // import pic1 from '/vector1.png'
 // import pic2 from '/vector2.png'
-const Hero = ({status}) => {
+const Hero = ({status,taskSolve}) => {
     return (
         <div className='flex justify-between items-center'>
             <div style={{
@@ -14,7 +14,7 @@ const Hero = ({status}) => {
                 background : "linear-gradient(#ffffff90, #FCB700), url('/vector2.png')"
             }}>
                 <h1>Resolved</h1>
-                <h1>0</h1>
+                <h1>{taskSolve.length}</h1>
             </div>
         </div>
     );

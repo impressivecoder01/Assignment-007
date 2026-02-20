@@ -2,26 +2,46 @@ import React, { use, useState } from 'react';
 import CustomerCard from './CustomerCard';
 import Hero from '../Hero';
 import TaskStatusCard from './TaskStatusCard';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AllCards = ({promise}) => {
     const data = use(promise)
-    console.log(data)
+    // console.log(data)
     const [status, setStatus] = useState([])
+    const [taskSolve, setTaskSolve] = useState([])
+    const handleResolvedTask = (task)=>{
+        const solvedTask = [...taskSolve, task]
+        setTaskSolve(solvedTask)
+        const remain = status.filter(item => item.id !== task.id)
+        setStatus(remain)
+        
+    }
+    console.log(taskSolve)
     const handleTaskStatus = (taskStatus) => {
         const isExist = status.find(item => item.id == taskStatus.id)
         if(isExist){
-            alert('already added')
+            toast.error('Already added', {
+position: "top-center",
+autoClose: 3000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+
+})
             return
         }
         const currentStatus = [...status, taskStatus]
-        console.log(isExist)
+        // console.log(isExist)
         setStatus(currentStatus)
     }
-    console.log(status)
+    // console.log(status)
     return (
         <>
         <div>
-            <Hero status={status}></Hero>
+            <Hero taskSolve={taskSolve} status={status}></Hero>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-2 py-5'>
 
@@ -39,7 +59,7 @@ const AllCards = ({promise}) => {
             <h1 className='font-bold text-2xl'>Task Status</h1>
             <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
                {
-                status.map(task=> <TaskStatusCard task={task}></TaskStatusCard>)
+                status.map(task=> <TaskStatusCard handleResolvedTask={handleResolvedTask} key={task.id} task={task}></TaskStatusCard>)
                }
             </div>
         

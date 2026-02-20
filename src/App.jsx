@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import AllCards from './components/cards/AllCards'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   const loadData = () => fetch('/json/data.json').then(res => res.json())
@@ -30,6 +31,7 @@ function App() {
       <footer className='w-11/12 mx-auto'>
         <Footer></Footer>
       </footer>
+      <ToastContainer></ToastContainer>
     </>
   )
 }
