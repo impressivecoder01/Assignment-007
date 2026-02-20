@@ -3,6 +3,7 @@ import CustomerCard from './CustomerCard';
 import Hero from '../Hero';
 import TaskStatusCard from './TaskStatusCard';
 import { ToastContainer, toast } from 'react-toastify';
+import ResolveCard from './ResolveCard';
 
 const AllCards = ({promise}) => {
     const data = use(promise)
@@ -14,6 +15,17 @@ const AllCards = ({promise}) => {
         setTaskSolve(solvedTask)
         const remain = status.filter(item => item.id !== task.id)
         setStatus(remain)
+        toast.success('Solve', {
+position: "top-center",
+autoClose: 2000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+
+});
         
     }
     console.log(taskSolve)
@@ -64,8 +76,10 @@ theme: "light",
             </div>
         
             <h1 className='font-bold text-2xl'>Resolved Task</h1>
-            <div className='shadow-2xl cursor-pointer border rounded-2xl my-2 '>
-
+            <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
+               {
+                taskSolve.map(item => <ResolveCard item ={item}></ResolveCard>)
+               }
             </div>
         </div>
         </div>
