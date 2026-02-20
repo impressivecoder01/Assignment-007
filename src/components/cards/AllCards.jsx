@@ -8,7 +8,13 @@ const AllCards = ({promise}) => {
     console.log(data)
     const [status, setStatus] = useState([])
     const handleTaskStatus = (taskStatus) => {
+        const isExist = status.find(item => item.id == taskStatus.id)
+        if(isExist){
+            alert('already added')
+            return
+        }
         const currentStatus = [...status, taskStatus]
+        console.log(isExist)
         setStatus(currentStatus)
     }
     console.log(status)
