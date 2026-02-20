@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import CustomerCard from './CustomerCard';
 import Hero from '../Hero';
+import TaskStatusCard from './TaskStatusCard';
 
 const AllCards = ({promise}) => {
     const data = use(promise)
@@ -31,7 +32,9 @@ const AllCards = ({promise}) => {
         <div>
             <h1 className='font-bold text-2xl'>Task Status</h1>
             <div className='shadow-2xl cursor-pointer border rounded-2xl my-2 '>
-
+               {
+                status.map(task=> <TaskStatusCard task={task}></TaskStatusCard>)
+               }
             </div>
         
             <h1 className='font-bold text-2xl'>Resolved Task</h1>
