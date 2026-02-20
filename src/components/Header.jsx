@@ -2,12 +2,12 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div className='flex justify-between w-11/12 mx-auto items-center py-10'>
+        <div className='flex flex-col md:flex-row justify-between w-11/12 mx-auto items-center py-10'>
             <div>
                 <h1 className='font-bold text-2xl'>CS — Ticket System</h1>
             </div>
             <div>
-                <ul className='flex items-center gap-5'>
+                <ul className='flex flex-col md:flex-row items-center cursor-pointer gap-5'>
                     <li>Home</li>
                     <li>FAQ</li>
                     <li>Blog</li>

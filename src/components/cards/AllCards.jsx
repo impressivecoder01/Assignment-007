@@ -17,7 +17,7 @@ const AllCards = ({promise}) => {
         <div>
             <Hero status={status}></Hero>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-12 py-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-12 gap-2 py-5'>
 
         
         <div className='col-span-10'>
@@ -29,9 +29,9 @@ const AllCards = ({promise}) => {
             </div>
             
         </div>
-        <div>
+        <div className='col-span-2'>
             <h1 className='font-bold text-2xl'>Task Status</h1>
-            <div className='shadow-2xl cursor-pointer border rounded-2xl my-2 '>
+            <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
                {
                 status.map(task=> <TaskStatusCard task={task}></TaskStatusCard>)
                }
