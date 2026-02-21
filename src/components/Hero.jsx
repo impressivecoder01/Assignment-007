@@ -4,9 +4,7 @@ import React from 'react';
 const Hero = ({status,taskSolve}) => {
     return (
         <div className='flex justify-between gap-1 items-center'>
-            <div className='w-1/2 text-center' style={{
-                background : "linear-gradient(#ffffff90, #FCB700), url('/vector1.png')"
-            }}>
+            <div className={`w-1/2 text-center bg-[url('')]`} >
                 <h1 className='text-2xl font-bold'>In-Progress</h1>
                 <h1 className='text-2xl font-semibold'>{status.length}</h1>
             </div>

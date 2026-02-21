@@ -1,4 +1,6 @@
+import { Instagram, Linkedin } from 'lucide-react';
 import React from 'react';
+
 
 const Footer = () => {
     return (
@@ -33,6 +35,14 @@ const Footer = () => {
             </div>
             <div>
                 <h1 className='font-bold text-2xl'>Social Links</h1>
+                <ul>
+                    <li className='flex gap-1'>
+                <Instagram /> Instagram
+                    </li>
+                    <li className='flex gap-1'>
+                        <Linkedin /> LinkdIn
+                    </li>
+                </ul>
             </div>
         </div>
     );
