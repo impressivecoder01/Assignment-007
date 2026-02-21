@@ -16,7 +16,7 @@ const AllCards = ({ promise }) => {
         setTaskSolve(solvedTask)
         const remain = status.filter(item => item.id !== task.id)
         setStatus(remain)
-        toast.success('Solve', {
+        toast.success('Solved', {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,

@@ -3,18 +3,18 @@ import React from 'react';
 // import pic2 from '/vector2.png'
 const Hero = ({status,taskSolve}) => {
     return (
-        <div className='flex justify-between items-center'>
-            <div style={{
+        <div className='flex justify-between gap-1 items-center'>
+            <div className='w-1/2 text-center' style={{
                 background : "linear-gradient(#ffffff90, #FCB700), url('/vector1.png')"
             }}>
-                <h1>In-Progress</h1>
-                <h1>{status.length}</h1>
+                <h1 className='text-2xl font-bold'>In-Progress</h1>
+                <h1 className='text-2xl font-semibold'>{status.length}</h1>
             </div>
-            <div style={{
+            <div className='w-1/2 text-center' style={{
                 background : "linear-gradient(#ffffff90, #FCB700), url('/vector2.png')"
             }}>
-                <h1>Resolved</h1>
-                <h1>{taskSolve.length}</h1>
+                <h1 className='text-2xl font-bold'>Resolved</h1>
+                <h1 className='text-2xl font-semibold'>{taskSolve.length}</h1>
             </div>
         </div>
     );
