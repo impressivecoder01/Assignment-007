@@ -5,46 +5,61 @@ import TaskStatusCard from './TaskStatusCard';
 import { ToastContainer, toast } from 'react-toastify';
 import ResolveCard from './ResolveCard';
 
-const AllCards = ({promise}) => {
+const AllCards = ({ promise }) => {
     const data = use(promise)
-    // console.log(data)
+    const [orders, setOrders] = useState(data)
+    // console.log(remain)
     const [status, setStatus] = useState([])
     const [taskSolve, setTaskSolve] = useState([])
-    const handleResolvedTask = (task)=>{
+    const handleResolvedTask = (task) => {
         const solvedTask = [...taskSolve, task]
         setTaskSolve(solvedTask)
         const remain = status.filter(item => item.id !== task.id)
         setStatus(remain)
         toast.success('Solve', {
-position: "top-center",
-autoClose: 2000,
-hideProgressBar: false,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "light",
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
 
-});
-        
+        });
+        const remainingOrder = orders.filter((a) => a.id !== task.id)
+        console.log(remainingOrder)
+        setOrders(remainingOrder)
+
     }
-    console.log(taskSolve)
+    // console.log(taskSolve)
     const handleTaskStatus = (taskStatus) => {
         const isExist = status.find(item => item.id == taskStatus.id)
-        if(isExist){
+        if (isExist) {
             toast.error('Already added', {
-position: "top-center",
-autoClose: 3000,
-hideProgressBar: false,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "light",
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
 
-})
+            })
             return
         }
+        toast.success('Issue will solve soon', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+
+        })
         const currentStatus = [...status, taskStatus]
         // console.log(isExist)
         setStatus(currentStatus)
@@ -52,40 +67,40 @@ theme: "light",
     // console.log(status)
     return (
         <>
-        <div>
-            <Hero taskSolve={taskSolve} status={status}></Hero>
-        </div>
-        <div className='grid grid-cols-1 lg:grid-cols-12 gap-2 py-5'>
+            <div>
+                <Hero taskSolve={taskSolve} status={status}></Hero>
+            </div>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-2 py-5'>
 
-        
-        <div className='col-span-10'>
-            <h1 className='font-semibold text-2xl'>Customer Tickets</h1>
-            <div className=''>
-{
-                data.map(item => <CustomerCard handleTaskStatus={handleTaskStatus} key={item.id} item={item}></CustomerCard>)
-            }
+
+                <div className='col-span-10'>
+                    <h1 className='font-semibold text-2xl'>Customer Tickets</h1>
+                    <div className=''>
+                        {
+                            orders.map(item => <CustomerCard handleTaskStatus={handleTaskStatus} key={item.id} item={item}></CustomerCard>)
+                        }
+                    </div>
+
+                </div>
+                <div className='col-span-2'>
+                    <h1 className='font-bold text-2xl'>Task Status</h1>
+                    <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
+                        {
+                            status.map(task => <TaskStatusCard handleResolvedTask={handleResolvedTask} key={task.id} task={task}></TaskStatusCard>)
+                        }
+                    </div>
+
+                    <h1 className='font-bold text-2xl'>Resolved Task</h1>
+                    <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
+                        {
+                            taskSolve.map(item => <ResolveCard item={item}></ResolveCard>)
+                        }
+                    </div>
+                </div>
             </div>
-            
-        </div>
-        <div className='col-span-2'>
-            <h1 className='font-bold text-2xl'>Task Status</h1>
-            <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
-               {
-                status.map(task=> <TaskStatusCard handleResolvedTask={handleResolvedTask} key={task.id} task={task}></TaskStatusCard>)
-               }
-            </div>
-        
-            <h1 className='font-bold text-2xl'>Resolved Task</h1>
-            <div className='shadow-2xl cursor-pointer  rounded-2xl my-2 '>
-               {
-                taskSolve.map(item => <ResolveCard item ={item}></ResolveCard>)
-               }
-            </div>
-        </div>
-        </div>
         </>
-        
-        
+
+
     );
 };
 
